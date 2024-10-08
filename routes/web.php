@@ -2,12 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TecnicoController;
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::resource('tecnico', TecnicoController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -18,5 +17,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::resource('tecnico', TecnicoController::class);
 
 require __DIR__.'/auth.php';

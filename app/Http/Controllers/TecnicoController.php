@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\tecnico;
 
 class TecnicoController extends Controller
 {
@@ -36,6 +37,9 @@ class TecnicoController extends Controller
             'especializacao' => $request->input('especializacao'),
             'disponibilidade' => $request->input('disponibilidade')
         ]);
+
+        $tecnico->save();
+        return redirect()->route('tecnico.index');
     }
 
     /**
