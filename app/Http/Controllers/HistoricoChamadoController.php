@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\tecnico;
+use App\Models\historicochamado;
 
-class TecnicoController extends Controller
+class HistoricoChamadoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //Obtém todos os tecnicos do DB utilizando o model Tecnico
-        $tecnico = Tecnico::all();
-        //Retorna a view 'tecnico.index'
-        return view('tecnico.index', compact('tecnico'));
+        //Obtém todo o historico do chamado do DB utilizando o model HistoricoChamado
+        $historicoChamado = HistoricoChamado::all();
+        //Retorna a view 'historicoChamado.index'
+        return view('historicoChamado.index', compact('historicoChamado'));
     }
 
     /**
@@ -23,8 +23,8 @@ class TecnicoController extends Controller
      */
     public function create()
     {
-        //Retorna a view 'tecnico.create'
-        return view('tecnico.create');
+        //retorna a view 'historicoChamado.create'
+        return view('historicoChamado.create');
     }
 
     /**
@@ -32,15 +32,13 @@ class TecnicoController extends Controller
      */
     public function store(Request $request)
     {
-        //cria uma nova instancia do model 'Tecnico' com os dados fornecidos no request
-        $tecnico = new Tecnico([
-            'nome' => $request->input('nome'),
-            'especializacao' => $request->input('especializacao'),
-            'disponibilidade' => $request->input('disponibilidade')
+        //cria uma nova instancia do model 'historicoChamado' com os dados fornecidos pelo request
+        $historicoChamado = new HistoricoChamado([
+            'id_chamado' => $request->input('id_chamado')
         ]);
 
-        $tecnico->save();
-        return redirect()->route('tecnico.index');
+        $historicoChamado->save();
+        return redirect()->route('historicoChamado.index');
     }
 
     /**

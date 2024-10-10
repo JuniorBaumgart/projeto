@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\tecnico;
+use App\Models\categoria;
 
-class TecnicoController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //Obtém todos os tecnicos do DB utilizando o model Tecnico
-        $tecnico = Tecnico::all();
-        //Retorna a view 'tecnico.index'
-        return view('tecnico.index', compact('tecnico'));
+        //Obtém todas as categorias do DB utilizando o model Categoria
+        $categoria = Categoria::all();
+        //Retorna a view 'categoria.index'
+        return view('categoria.index', compact('categoria'));
     }
 
     /**
@@ -23,8 +23,8 @@ class TecnicoController extends Controller
      */
     public function create()
     {
-        //Retorna a view 'tecnico.create'
-        return view('tecnico.create');
+
+        return view('categoria.create');
     }
 
     /**
@@ -32,15 +32,14 @@ class TecnicoController extends Controller
      */
     public function store(Request $request)
     {
-        //cria uma nova instancia do model 'Tecnico' com os dados fornecidos no request
-        $tecnico = new Tecnico([
+        //Cria uma nova instancia do model 'Categoria' com os dados fornecidos no request
+        $categoria = new Categoria([
             'nome' => $request->input('nome'),
-            'especializacao' => $request->input('especializacao'),
-            'disponibilidade' => $request->input('disponibilidade')
+            'descricao' => $request->input('descricao')
         ]);
 
-        $tecnico->save();
-        return redirect()->route('tecnico.index');
+        $usuario->save();
+        return redirect()->route('categoria.index');
     }
 
     /**

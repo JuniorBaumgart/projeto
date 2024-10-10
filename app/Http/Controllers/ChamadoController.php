@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\tecnico;
+use App\Models\chamado;
 
-class TecnicoController extends Controller
+class ChamadoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //Obtém todos os tecnicos do DB utilizando o model Tecnico
-        $tecnico = Tecnico::all();
-        //Retorna a view 'tecnico.index'
-        return view('tecnico.index', compact('tecnico'));
+        //Obtém todos os chamados do DB utilizando o model Chamado 
+        $chamado = Chamado::all();
+        //Retorna a view 'chamado.index'
+        return view('chamado.index', compact('chamado'));
     }
 
     /**
@@ -23,8 +23,8 @@ class TecnicoController extends Controller
      */
     public function create()
     {
-        //Retorna a view 'tecnico.create'
-        return view('tecnico.create');
+        //Retorna a view 'chamado.create'
+        return view('chamado.create');
     }
 
     /**
@@ -32,15 +32,17 @@ class TecnicoController extends Controller
      */
     public function store(Request $request)
     {
-        //cria uma nova instancia do model 'Tecnico' com os dados fornecidos no request
-        $tecnico = new Tecnico([
-            'nome' => $request->input('nome'),
-            'especializacao' => $request->input('especializacao'),
-            'disponibilidade' => $request->input('disponibilidade')
+        //Cria uma nova instancia do model 'Chamado' com os dados fornecidos no request
+        $chamado = new Chamado([
+            'descricao' => $request->input('descricao'),
+            'status' => $request->input('status'),
+            'id_usuario' => $request->input('id_usuario'),
+            'id_tecnico' => $request->input('id_tecnico'),
+            'id_categoria' => $request->input('id_categoria')
         ]);
 
-        $tecnico->save();
-        return redirect()->route('tecnico.index');
+        $chamado->save();
+        return redirect()->route('chamado.index');
     }
 
     /**

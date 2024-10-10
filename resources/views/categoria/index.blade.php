@@ -25,34 +25,30 @@
                         <caption>Vamo ver se Funciona</caption>
                         <thead>
                             <tr>
-                                <th scope="col">Tecnico</th>
-                                <th scope="col">Disponibilidade</th>
-                                <th scope="col">Especialização</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Descrição</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($tecnico as $tecnico)
+                            @foreach($categoria as $categoria)
                                 <tr>
-                                    <th>{{ $tecnico->$nome }}</th>
-                                    <td>{{ $tecnico->$disponibilidade }}</td>
-                                    <td>{{ $tecnico->$especializacao }}</td>
+                                    <th>{{ $categoria->$nome }}</th>
+                                    <td>{{ $categoria->$descricao }}</td>
                                 </tr>
                                 <tr>
-                                    <th>{{ $tecnico->$nome }}</th>
-                                    <td>{{ $tecnico->$disponibilidade }}</td>
-                                    <td>{{ $tecnico->$especializacao }}</td>
+                                    <th>{{ $categoria->$nome }}</th>
+                                    <td>{{ $categoria->$descricao }}</td>
                                 </tr>
                                 <tr>
-                                    <th>{{ $tecnico->$nome }}</th>
-                                    <td>{{ $tecnico->$disponibilidade }}</td>
-                                    <td>{{ $tecnico->$especializacao }}</td>
+                                    <th>{{ $categoria->$nome }}</th>
+                                    <td>{{ $categoria->$descricao }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th scope="row" colspan="2">
-                                    <a href="{{ url('/tecnico/create') }}">Inserir Tencnico</a>
+                                    <a href="{{ url('/categoria/create') }}">Inserir Categoria</a>
                                 </th>
                             </tr>
                         </tfoot>

@@ -25,34 +25,45 @@
                         <caption>Vamo ver se Funciona</caption>
                         <thead>
                             <tr>
-                                <th scope="col">Tecnico</th>
-                                <th scope="col">Disponibilidade</th>
-                                <th scope="col">Especialização</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Login</th>
+                                <th scope="col">Senha</th>
+                                <th scope="col">Tipo</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($tecnico as $tecnico)
+                            @foreach($usuario as $usuario)
                                 <tr>
-                                    <th>{{ $tecnico->$nome }}</th>
-                                    <td>{{ $tecnico->$disponibilidade }}</td>
-                                    <td>{{ $tecnico->$especializacao }}</td>
+                                    <th>{{ $usuario->$nome }}</th>
+                                    <th>{{ $usuario->$email }}</th>
+                                    <th>{{ $usuario->$cpf }}</th>
+                                    <th>{{ $usuario->$login }}</th>
+                                    <th>{{ $usuario->$senha }}</th>
+                                    <th>{{ $usuario->$tipoUsuario }}</th>
                                 </tr>
                                 <tr>
-                                    <th>{{ $tecnico->$nome }}</th>
-                                    <td>{{ $tecnico->$disponibilidade }}</td>
-                                    <td>{{ $tecnico->$especializacao }}</td>
+                                    <th>{{ $usuario->$nome }}</th>
+                                    <th>{{ $usuario->$email }}</th>
+                                    <th>{{ $usuario->$cpf }}</th>
+                                    <th>{{ $usuario->$login }}</th>
+                                    <th>{{ $usuario->$senha }}</th>
+                                    <th>{{ $usuario->$tipoUsuario }}</th>
                                 </tr>
                                 <tr>
-                                    <th>{{ $tecnico->$nome }}</th>
-                                    <td>{{ $tecnico->$disponibilidade }}</td>
-                                    <td>{{ $tecnico->$especializacao }}</td>
+                                    <th>{{ $usuario->$nome }}</th>
+                                    <th>{{ $usuario->$email }}</th>
+                                    <th>{{ $usuario->$cpf }}</th>
+                                    <th>{{ $usuario->$login }}</th>
+                                    <th>{{ $usuario->$senha }}</th>
+                                    <th>{{ $usuario->$tipoUsuario }}</th>
                                 </tr>
                             @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th scope="row" colspan="2">
-                                    <a href="{{ url('/tecnico/create') }}">Inserir Tencnico</a>
+                                    <a href="{{ url('/usuario/create') }}">Inserir Usuario</a>
                                 </th>
                             </tr>
                         </tfoot>

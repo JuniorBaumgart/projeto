@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\tecnico;
+use App\Models\usuario;
 
-class TecnicoController extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //Obtém todos os tecnicos do DB utilizando o model Tecnico
-        $tecnico = Tecnico::all();
-        //Retorna a view 'tecnico.index'
-        return view('tecnico.index', compact('tecnico'));
+        //Obtém todos os usuarios do DB utilizando o model Usuario
+        $usuario = Usuario::all();
+        //Retorna a view 'usuario.index'
+        return view('usuario.index', compact('usuario'));
     }
 
     /**
@@ -23,8 +23,8 @@ class TecnicoController extends Controller
      */
     public function create()
     {
-        //Retorna a view 'tecnico.create'
-        return view('tecnico.create');
+        //Retorna a view 'usuario.create'
+        return view('usuario.create');
     }
 
     /**
@@ -32,15 +32,18 @@ class TecnicoController extends Controller
      */
     public function store(Request $request)
     {
-        //cria uma nova instancia do model 'Tecnico' com os dados fornecidos no request
-        $tecnico = new Tecnico([
+        //Cria uma nova instancia do model 'Usuario' com os dados fornecidos no request
+        $usuario = new Usuario([
             'nome' => $request->input('nome'),
-            'especializacao' => $request->input('especializacao'),
-            'disponibilidade' => $request->input('disponibilidade')
+            'email' => $request->input('email'),
+            'cpf' => $request->input('cpf'),
+            'login' => $request->input('login'),
+            'senha' => $request->input('senha'),
+            'tipoUsuario' => $request->input('tipoUsuario')
         ]);
 
-        $tecnico->save();
-        return redirect()->route('tecnico.index');
+        $usuario->save();
+        return redirect()->route('usuario.index');
     }
 
     /**
