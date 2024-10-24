@@ -15,7 +15,7 @@
             
             <div class="form-actions">
                 <button type="submit" class="btn-secondary">Salvar</button>
-                <a href="{{ route('usuario.index') }}" class="btn-secondary">Cancelar</a>
+                <a href="{{ route('categoria.index') }}" class="btn-secondary">Cancelar</a>
             </div>
         </form>
     </div>
