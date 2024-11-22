@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('tecnico', TecnicoController::class);
+
 Route::resource('usuario', UsuarioController::class);
 Route::resource('categoria', CategoriaController::class);
 Route::resource('chamado', ChamadoController::class);
