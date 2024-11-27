@@ -66,17 +66,12 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
         </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-8 lg:px-10">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
+    </x-slot>    
+    
+    <div class="py-8">
+        <div class="max-w-5xl mx-auto sm:px-4 lg:px-6">
+         
         </div>
     </div>
 
@@ -122,6 +117,7 @@
             <a href="{{ route('historicoUsuario.index') }}"
                 class="badge-dash rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white text-black"
                 role="link" aria-label="{{ __('Historico Usuario') }}">
+                <img class="rounded-md" src="../historico_usuario.jpg" alt="Imagem 1">
                 <span class="text-black font-bold">{{ __('Historico Usuario') }}</span>
             </a>
         @endif
@@ -130,6 +126,7 @@
             <a href="{{ route('historicoTecnico.index') }}"
                 class="badge-dash rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white text-black"
                 role="link" aria-label="{{ __('Historico Tecnico') }}">
+                <img class="rounded-md" src="../historico_tecnico.jpg" alt="Imagem 1">
                 <span class="text-black font-bold">{{ __('Historico Tecnico') }}</span>
             </a>
         @endif
@@ -138,6 +135,7 @@
             <a href="{{ route('historicoChamado.index') }}"
                 class="badge-dash rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white text-black"
                 role="link" aria-label="{{ __('Historico Chamado') }}">
+                <img class="rounded-md" src="../historico_chamado.jpg" alt="Imagem 1">
                 <span class="text-black font-bold">{{ __('Historico Chamado') }} </span>
             </a>
         @endif
