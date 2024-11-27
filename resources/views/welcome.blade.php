@@ -96,58 +96,58 @@ text-align: left;
 width: 100%;
 padding-left: 20px;
 }
-
 .badges {
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-justify-content: center;
-align-items: flex-start;
-padding: 0 20px;
-min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 20px;
+  min-height: 200px;
 }
 
 .badge {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: flex-start;
-width: 200px;
-height: 300px;
-text-align: center;
-background-color: #f9f9f9;
-border-radius: 8px;
-padding: 10px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 250px;
+  height: 410px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .badge img {
-width: 100%;
-height: auto;
-border-radius: 8px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-.badge h3 {
-font-size: 18px;
-margin: 10px 0;
-text-align: left;
-width: 100%;
-padding-left: 10px;
+.badge h4 {
+  font-size: 18px; 
+  margin: 10px 0;
+  text-align: left;
+  width: 100%;
+  padding-left: 10px;
 }
 
 .badge p {
-font-size: 14px;
-color: #666;
-margin-top: auto;
-text-align: left;
-padding-left: 10px;
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+  text-align: left;
+  padding-left: 10px;
 }
 
 .badges-container {
-padding: 0 10%;
-width: 100%;
-box-sizing: border-box;
+  padding: 0 10%;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 
 hr.separator {
 border: 0;
@@ -156,6 +156,7 @@ margin: 50px 0;
 width: 80%;
 margin-left: 10%;
 }
+
 </style>
 
 </head>
@@ -214,33 +215,33 @@ margin-left: 10%;
         <div class="badges">
 
             <div class="badge">
-                <img src="../inovaPlaceholder.jpg" alt="Imagem 1">
-                <h3>Título</h3>
-                <p>breve descrição sobre o conteúdo.</p>
+                <img src="../service2.jpg" alt="Imagem 2">
+                <h4>Consultoria em TI</h4>
+                <p>Orientação para otimizar a infraestrutura de TI, processos e implementação de tecnologias inovadoras, além de garantir a segurança da informação.</p>
             </div>
 
             <div class="badge">
-                <img src="../inovaPlaceholder.jpg" alt="Imagem 1">
-                <h3>Título</h3>
-                <p>breve descrição sobre o conteúdo.</p>
+                <img src="../service3.jpg" alt="Imagem 3">
+                <h4>Suporte de Sistemas</h4>
+                <p>Oferecer assistência técnica contínua para sistemas existentes, com atualizações regulares e resolução de problemas técnicos.</p>
             </div>
 
             <div class="badge">
-                <img src="../inovaPlaceholder.jpg" alt="Imagem 1">
-                <h3>Título</h3>
-                <p>breve descrição sobre o conteúdo.</p>
+                <img src="../service5.jpg" alt="Imagem 5">
+                <h4>Cibersegurança</h4>
+                <p> voltado para proteger os dados e sistemas de empresas contra ataques, com monitoramento, auditorias e implementação de estratégias de proteção.</p>
             </div>
 
-            <div class="badge">
+     <!--       <div class="badge">
                 <img src="../inovaPlaceholder.jpg" alt="Imagem 1">
-                <h3>Título</h3>
-                <p>breve descrição sobre o conteúdo.</p>
-            </div>
-
+                <h4>Desenvolvimento de Software</h4>
+                <p>Criação de soluções personalizadas para atender às necessidades específicas de um cliente, como aplicativos móveis, sistemas web, ou software corporativo.</p>
+            </div> --> 
+            
             <div class="badge">
-                <img src="../inovaPlaceholder.jpg" alt="Imagem 1">
-                <h3>Título</h3>
-                <p>breve descrição sobre o conteúdo.</p>
+                <img src="../service4.jpg" alt="Imagem 4">
+                <h4>Serviços em Cloud</h4>
+                <p>Implementação de soluções baseadas em nuvem, como armazenamento, computação e backups, garantindo escalabilidade e segurança.</p>
             </div>
 
         </div>
