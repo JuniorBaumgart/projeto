@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\historicousuario;
+use App\Models\Usuario;
 
 class HistoricoUsuarioController extends Controller
 {
@@ -13,7 +14,7 @@ class HistoricoUsuarioController extends Controller
     public function index()
     {
         //Obtém todo o historico do usuario do DB utilizando o model HistoricoUsuario
-        $historicoUsuarios = HistoricoUsuario::all();
+        $historicoUsuarios = HistoricoUsuario::with('usuario')->get();
         //Retorna a view 'historicoUsuario.index'
         return view('historicoUsuario.index', compact('historicoUsuarios'));
     }
@@ -23,8 +24,8 @@ class HistoricoUsuarioController extends Controller
      */
     public function create()
     {
-        //Retorna a view 'historicoUsuario.create'
-        return view('historicoUsuario.create');
+        $usuarios = Usuario::all(); // Busca todos os usuários
+        return view('historicoUsuario.create', compact('usuarios'));
     }
 
     /**
@@ -55,8 +56,9 @@ class HistoricoUsuarioController extends Controller
     public function edit(string $id)
     {
         //Busca o historico do usuario pelo id no banco e se encontrar retorna a view 'historicoUsuario.edit'
-        $historicoUsuarios = HistoricoUsuario::findOrFail($id);
-        return view('historicoUsuario.edit', compact('historicoUsuarios'));
+        $historicoUsuario = HistoricoUsuario::findOrFail($id);
+        $usuarios = Usuario::all(); // Busca todos os usuários
+        return view('historicoUsuario.index', compact('historicoUsuario', 'usuarios'));
     }
 
     /**

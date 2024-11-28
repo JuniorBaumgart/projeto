@@ -40,7 +40,7 @@
                             @foreach($historicoUsuarios as $historico)
                                 <tr class="hover:bg-gray-100">
                                     <td class="border border-gray-300 px-4 py-2">{{ $historico->id }}</td>
-                                    <td class="border border-gray-300 px-4 py-2">{{ $historico->id_usuario }}</td>
+                                    <td class="border border-gray-300 px-4 py-2">{{ $historico->usuario->nome ?? 'Usuário não encontrado' }}</td>
                                     <td class="border border-gray-300 px-4 py-2">
                                         <a href="{{ route('historicoUsuario.edit', $historico->id) }}" class="text-blue-600 hover:underline">
                                             <i class="bi bi-vector-pen"></i> Editar

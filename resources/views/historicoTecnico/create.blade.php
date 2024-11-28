@@ -11,8 +11,13 @@
                     <!-- Técnico -->
                     <div>
                         <label for="id_tecnico" class="block text-sm font-medium text-gray-700">Técnico</label>
-                        <input name="id_tecnico" type="text" id="id_tecnico"
-                               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 sm:text-sm" required>
+                        <select id="id_tecnico" name="id_tecnico" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            @foreach($tecnicos as $tecnico)
+                                <option value="{{ $tecnico->id }}" {{ old('id_tecnico', $historicoTecnico->id_tecnico ?? '') == $tecnico->id ? 'selected' : '' }}>
+                                    {{ $tecnico->nome }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <!-- Ações -->

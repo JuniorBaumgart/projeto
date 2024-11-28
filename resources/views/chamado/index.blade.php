@@ -44,9 +44,9 @@
                                 <tr class="hover:bg-gray-100">
                                     <td class="border border-gray-300 px-4 py-2">{{ $chamado->descricao }}</td>
                                     <td class="border border-gray-300 px-4 py-2">{{ $chamado->status }}</td>
-                                    <td class="border border-gray-300 px-4 py-2">{{ $chamado->id_usuario }}</td>
-                                    <td class="border border-gray-300 px-4 py-2">{{ $chamado->id_tecnico }}</td>
-                                    <td class="border border-gray-300 px-4 py-2">{{ $chamado->id_categoria }}</td>
+                                    <td class="border border-gray-300 px-4 py-2">{{ $chamado->usuario->nome ?? 'Usuário não encontrado' }}</td>
+                                    <td class="border border-gray-300 px-4 py-2">{{ $chamado->tecnico->nome ?? 'Técnico não encontrado' }}</td>
+                                    <td class="border border-gray-300 px-4 py-2">{{ $chamado->categoria->nome ?? 'Categoria não encontrada' }}</td>
                                     <td class="border border-gray-300 px-4 py-2">
                                         <a href="{{ route('chamado.edit', $chamado->id) }}" class="text-blue-600 hover:underline">
                                             <i class="bi bi-vector-pen"></i> Editar

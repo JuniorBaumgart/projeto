@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\chamado;
+use App\Models\Tecnico;
+use App\Models\Usuario;
+use App\Models\Categoria;
+
+
 
 class ChamadoController extends Controller
 {
@@ -13,7 +18,7 @@ class ChamadoController extends Controller
     public function index()
     {
         //Obtém todos os chamados do DB utilizando o model Chamado 
-        $chamados = Chamado::all();
+        $chamados = Chamado::with(['usuario', 'tecnico', 'categoria'])->get();
         //Retorna a view 'chamado.index'
         return view('chamado.index', compact('chamados'));
     }
@@ -23,8 +28,11 @@ class ChamadoController extends Controller
      */
     public function create()
     {
-        //Retorna a view 'chamado.create'
-        return view('chamado.create');
+        $usuarios = Usuario::all();
+        $tecnicos = Tecnico::all();
+        $categorias = Categoria::all();
+    
+        return view('chamado.create', compact('usuarios', 'tecnicos', 'categorias'));
     }
 
     /**
@@ -58,9 +66,12 @@ class ChamadoController extends Controller
      */
     public function edit(string $id)
     {
-        //Busca o chamado pelo id no banco e se encontrar retorna a view 'chamado.edit'
-        $chamados = Chamado::findOrFail($id);
-        return view('chamado.edit', compact('chamados'));
+    $chamado = Chamado::findOrFail($id);
+    $usuarios = Usuario::all(); // Supondo que o modelo do usuário seja User
+    $tecnicos = Tecnico::all(); // Modelo Técnico
+    $categorias = Categoria::all(); // Modelo Categoria
+
+    return view('chamado.edit', compact('chamado', 'usuarios', 'tecnicos', 'categorias'));
     }
 
     /**

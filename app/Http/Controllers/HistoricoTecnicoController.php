@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\historicotecnico;
+use App\Models\Tecnico;
 
 class HistoricoTecnicoController extends Controller
 {
@@ -13,7 +14,7 @@ class HistoricoTecnicoController extends Controller
     public function index()
     {
         //Obtém todo o historico do tecnico do DB utilizando o mode HistoricoTecnico
-        $historicoTecnicos = HistoricoTecnico::all();
+        $historicoTecnicos = HistoricoTecnico::with('tecnico')->get();
         //Retorna a view 'historicoTecnico.index'
         return view('historicoTecnico.index', compact('historicoTecnicos'));
     }
@@ -23,8 +24,8 @@ class HistoricoTecnicoController extends Controller
      */
     public function create()
     {
-        //Retorna a view 'historicoTecnico.create'
-        return view('historicoTecnico.create');
+        $tecnicos = Tecnico::all(); // Busca todos os usuários
+        return view('historicoTecnico.create', compact('tecnicos')); // Passa a variável $tecnicos para a view
     }
 
     /**
@@ -54,9 +55,9 @@ class HistoricoTecnicoController extends Controller
      */
     public function edit(string $id)
     {
-        //Busca o tecnico do Chamado pelo id no banco e retorna a view 'historicoTecnico.edit'
-        $historicoTecnicos = HistoricoTecnico::findOrFail($id);
-        return view('historicoTecnico.edit', compact('historicoTecnicos'));
+        $historicoTecnico = HistoricoTecnico::findOrFail($id);
+        $tecnicos = Tecnico::all(); // Busca todos os técnicos
+        return view('historicoTecnico.edit', compact('historicoTecnico', 'tecnicos'));
     }
 
     /**

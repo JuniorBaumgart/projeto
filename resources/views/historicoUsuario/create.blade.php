@@ -11,8 +11,13 @@
                     <!-- Usuário -->
                     <div>
                         <label for="id_usuario" class="block text-sm font-medium text-gray-700">Usuário</label>
-                        <input name="id_usuario" type="text" id="id_usuario"
-                               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-gray-500 focus:border-gray-500 sm:text-sm" required>
+                        <select id="id_usuario" name="id_usuario" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            @foreach($usuarios as $usuario)
+                                <option value="{{ $usuario->id }}" {{ old('id_usuario', $historicoUsuario->id_usuario ?? '') == $usuario->id ? 'selected' : '' }}>
+                                    {{ $usuario->nome }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <!-- Ações -->
